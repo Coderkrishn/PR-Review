@@ -1,0 +1,177 @@
+{
+  "benchmark": {
+    "pullRequest": "demo-pr-101",
+    "title": "Example authentication changes (synthetic fixture)",
+    "verifiedIssues": [
+      {
+        "id": "GT-1",
+        "category": "security",
+        "file": "src/auth.ts",
+        "line": 42,
+        "description": "Missing authorization check on admin endpoint"
+      },
+      {
+        "id": "GT-2",
+        "category": "bug",
+        "file": "src/session.ts",
+        "line": 18,
+        "description": "Session expiry not checked"
+      },
+      {
+        "id": "GT-3",
+        "category": "performance",
+        "file": "src/users.ts",
+        "line": 70,
+        "description": "N+1 database query in user listing"
+      },
+      {
+        "id": "GT-4",
+        "category": "bug",
+        "file": "src/token.ts",
+        "line": 33,
+        "description": "Null token causes uncaught exception"
+      }
+    ],
+    "synthetic": true,
+    "results": [
+      {
+        "reviewer": "Reviewer Alpha (synthetic)",
+        "tp": 2,
+        "fp": 1,
+        "fn": 2,
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285715,
+        "findings": [
+          {
+            "id": "A1",
+            "category": "security",
+            "description": "Admin route lacks authorization",
+            "matchesGroundTruthId": "GT-1",
+            "status": "true-positive"
+          },
+          {
+            "id": "A2",
+            "category": "bug",
+            "description": "Expired sessions remain valid",
+            "matchesGroundTruthId": "GT-2",
+            "status": "true-positive"
+          },
+          {
+            "id": "A3",
+            "category": "style",
+            "description": "Prefer const",
+            "matchesGroundTruthId": null,
+            "status": "false-positive"
+          }
+        ],
+        "missedIssues": [
+          {
+            "id": "GT-3",
+            "category": "performance",
+            "file": "src/users.ts",
+            "line": 70,
+            "description": "N+1 database query in user listing"
+          },
+          {
+            "id": "GT-4",
+            "category": "bug",
+            "file": "src/token.ts",
+            "line": 33,
+            "description": "Null token causes uncaught exception"
+          }
+        ]
+      },
+      {
+        "reviewer": "Reviewer Beta (synthetic)",
+        "tp": 3,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75,
+        "findings": [
+          {
+            "id": "B1",
+            "category": "performance",
+            "description": "Repeated user queries",
+            "matchesGroundTruthId": "GT-3",
+            "status": "true-positive"
+          },
+          {
+            "id": "B2",
+            "category": "bug",
+            "description": "Null token crash",
+            "matchesGroundTruthId": "GT-4",
+            "status": "true-positive"
+          },
+          {
+            "id": "B3",
+            "category": "security",
+            "description": "Admin auth missing",
+            "matchesGroundTruthId": "GT-1",
+            "status": "true-positive"
+          },
+          {
+            "id": "B4",
+            "category": "bug",
+            "description": "Potential race condition (unverified)",
+            "matchesGroundTruthId": null,
+            "status": "false-positive"
+          }
+        ],
+        "missedIssues": [
+          {
+            "id": "GT-2",
+            "category": "bug",
+            "file": "src/session.ts",
+            "line": 18,
+            "description": "Session expiry not checked"
+          }
+        ]
+      },
+      {
+        "reviewer": "Reviewer Gamma (synthetic)",
+        "tp": 1,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1,
+        "recall": 0.25,
+        "f1": 0.4,
+        "findings": [
+          {
+            "id": "C1",
+            "category": "bug",
+            "description": "Expired session accepted",
+            "matchesGroundTruthId": "GT-2",
+            "status": "true-positive"
+          }
+        ],
+        "missedIssues": [
+          {
+            "id": "GT-1",
+            "category": "security",
+            "file": "src/auth.ts",
+            "line": 42,
+            "description": "Missing authorization check on admin endpoint"
+          },
+          {
+            "id": "GT-3",
+            "category": "performance",
+            "file": "src/users.ts",
+            "line": 70,
+            "description": "N+1 database query in user listing"
+          },
+          {
+            "id": "GT-4",
+            "category": "bug",
+            "file": "src/token.ts",
+            "line": 33,
+            "description": "Null token causes uncaught exception"
+          }
+        ]
+      }
+    ]
+  },
+  "custom": null
+}

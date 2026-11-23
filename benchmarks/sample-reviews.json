@@ -1,0 +1,68 @@
+{
+  "disclaimer": "SYNTHETIC SAMPLE ONLY \u2014 not real AI reviewer output",
+  "reviews": [
+    {
+      "reviewer": "Reviewer Alpha (synthetic)",
+      "findings": [
+        {
+          "id": "A1",
+          "category": "security",
+          "description": "Admin route lacks authorization",
+          "matchesGroundTruthId": "GT-1"
+        },
+        {
+          "id": "A2",
+          "category": "bug",
+          "description": "Expired sessions remain valid",
+          "matchesGroundTruthId": "GT-2"
+        },
+        {
+          "id": "A3",
+          "category": "style",
+          "description": "Prefer const",
+          "matchesGroundTruthId": null
+        }
+      ]
+    },
+    {
+      "reviewer": "Reviewer Beta (synthetic)",
+      "findings": [
+        {
+          "id": "B1",
+          "category": "performance",
+          "description": "Repeated user queries",
+          "matchesGroundTruthId": "GT-3"
+        },
+        {
+          "id": "B2",
+          "category": "bug",
+          "description": "Null token crash",
+          "matchesGroundTruthId": "GT-4"
+        },
+        {
+          "id": "B3",
+          "category": "security",
+          "description": "Admin auth missing",
+          "matchesGroundTruthId": "GT-1"
+        },
+        {
+          "id": "B4",
+          "category": "bug",
+          "description": "Potential race condition (unverified)",
+          "matchesGroundTruthId": null
+        }
+      ]
+    },
+    {
+      "reviewer": "Reviewer Gamma (synthetic)",
+      "findings": [
+        {
+          "id": "C1",
+          "category": "bug",
+          "description": "Expired session accepted",
+          "matchesGroundTruthId": "GT-2"
+        }
+      ]
+    }
+  ]
+}

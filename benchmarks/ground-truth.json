@@ -1,0 +1,34 @@
+{
+  "pullRequest": "demo-pr-101",
+  "title": "Example authentication changes (synthetic fixture)",
+  "verifiedIssues": [
+    {
+      "id": "GT-1",
+      "category": "security",
+      "file": "src/auth.ts",
+      "line": 42,
+      "description": "Missing authorization check on admin endpoint"
+    },
+    {
+      "id": "GT-2",
+      "category": "bug",
+      "file": "src/session.ts",
+      "line": 18,
+      "description": "Session expiry not checked"
+    },
+    {
+      "id": "GT-3",
+      "category": "performance",
+      "file": "src/users.ts",
+      "line": 70,
+      "description": "N+1 database query in user listing"
+    },
+    {
+      "id": "GT-4",
+      "category": "bug",
+      "file": "src/token.ts",
+      "line": 33,
+      "description": "Null token causes uncaught exception"
+    }
+  ]
+}
